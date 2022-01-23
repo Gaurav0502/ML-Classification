@@ -1,43 +1,43 @@
 # Problem Statement 
-This should be a brief description of the domain of your dataset (e.g. if it is the Titanic Dataset then write about the ship, the incident that happened, what you're trying to do with the data).
+A machine has multiple specifications which are given in the dataset and we have to predict the Failure Type encountered by that machine. We have to predict which kind of failure will the machine may encounter. 
 ## Dataset
 
-The dataset used is the [Name of the Dataset](Download link) from (source of download e.g Kaggle). If the task is a classification task, then you must specify the number of classes and give a 1 line description of each class as follows(example of Iris Dataset). 
+The dataset used is the Predictive Maintenance (https://www.kaggle.com/shivamb/machine-predictive-maintenance-classification) from Kaggle. 
 
-The 3 class labels are:
+Task : Classification of Failure Types
+
+Target : Failure Type and Target
+
+The 3 class labels of Failure Type are:
 <br>
 
-**1. Iris Setosa:** Given iris flower belongs to the Setosa species
+**1. No Failure :** Machine with given specifications does not undergo any failure.
 <br>
-**2. Iris Virginica:** Given iris flower belongs to the Virginica species
+**2.Heat Dissipation Failure :** Machine with given specifications undergoes a Heat Dissipation Failure.
 <br>
-**3. Iris Versicolor:** Given iris flower belongs to the Versicolor species
+**3. Others :** Machine with given specifications undergoes a Failure of any other type.
 
-If the task is a regression task, then explain the target variable and give brief statistics.(e.g. Housing Prices)
+Note: Others consists of Power Failure,Overstrain Failure,Tool Wear Failure,Random Failures only.
 
-**Target Variable: SalePrice**
+The 2 class labels of Target are:
 <br>
-<br>
-Sale Price refers to the selling price of the house.
-<br>
-**Mean Selling Price:** 121,000$
-<br>
-**Max Selling Price:** 1,000,000$
-<br>
-**Min Selling Price:** 45,000$
 
-
+1. 0 :  No failure happens
+2. 1 :  Failure happens
+<br>
 ## Model(s) Used
 
-This needs to be a description of the model used and a brief overview of how it works in theory (e.g taken of a CNN Model): 
-
-The network architecture used was a basic CNN model, with Max Pooling and ReLU Activation functions. Input images are resized to an optimal size and then fed into the **Convolutional layer**. These images are converted to their pixel values, which can be imagined as a three-dimensional matrix for the purpose of visualization. The **Convolutional layer** has a kernel. This kernel is generally a small matrix of specified kernel size mxnx3 (3 for RGB images). 
+Various classification models were tried on the dataset as follows:
+1. K-Nearest Neighbours(KNN)
+2. Logistic Regression
+3. Decision Tree 
 <br>
 
-**Rectified Linear Unit (ReLU)** is the activation layer used in CNNs.The activation function is applied to increase non-linearity in the CNN. Images are made of different objects that are not linear to each other.
+**K-Nearest Neighbours:** a Supervised Learning Algorithm most commonly used for classification. It uses the training data to form groups or clusters of every label or category. When unclassified data is predicted it takes the k-nearest neighbours and chooses the label of majority.
 
+**Logistic Regression:** a Supervised Learing Algorithm generally used for binary classification problems. However, it can be used for multiclass classification problems using One v/s all methodology.
 
-**Max Pooling:** A limitation of the feature map output of Convolutional Layers is that they record the precise position of features in the input. This means that small movements in the position of the feature in the input image will result in a different feature map. This can happen with re-cropping, rotation, shifting, and other minor changes to the input image. A common approach to addressing this problem from signal processing is called down sampling. This is where a lower resolution version of an input signal is created that still contains the large or important structural elements, without the fine detail that may not be as useful to the task.
+**Decision Tree:** a tree-like flowchart representation with each branch resembling the outcome of a test and leaf node is a class label.
 
 ## Future Work
-Good ideas or strategies that you were not able to implement which you think can help  improve performance.
+Identifying overfitting in the model and various other parameters in the used classification algorithm for reducing overfitting.
